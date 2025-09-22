@@ -1,0 +1,2 @@
+# LidCoin
+Projet LidCoin
