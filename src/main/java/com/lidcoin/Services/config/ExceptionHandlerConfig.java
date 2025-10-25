@@ -39,3 +39,25 @@ public class ExceptionHandlerConfig {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
     }
 }
+
+
+
+// ============================================
+// ErrorResponse.java
+// ============================================
+class ErrorResponse {
+    private int statusCode;
+    private String message;
+    private long timestamp;
+    
+    public ErrorResponse(int statusCode, String message, long timestamp) {
+        this.statusCode = statusCode;
+        this.message = message;
+        this.timestamp = timestamp;
+    }
+    
+    // Getters
+    public int getStatusCode() { return statusCode; }
+    public String getMessage() { return message; }
+    public long getTimestamp() { return timestamp; }
+}
