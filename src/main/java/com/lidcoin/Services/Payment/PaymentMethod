@@ -1,0 +1,6 @@
+// ============================================
+// 6. PaymentMethod (Enum)
+// ============================================
+enum PaymentMethod {
+    CARD, PAYPAL, BANK_TRANSFER, CRYPTO
+}
