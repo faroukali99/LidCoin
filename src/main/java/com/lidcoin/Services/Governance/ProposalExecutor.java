@@ -34,3 +34,15 @@ class ProposalExecutor {
         System.out.println("🆙 Mise à niveau du système exécutée");
     }
 }
+
+
+// ============================================
+// Enums
+// ============================================
+enum ProposalType {
+    PARAMETER_CHANGE, TREASURY_SPEND, UPGRADE, GENERAL
+}
+
+enum ProposalStatus {
+    ACTIVE, PASSED, FAILED, EXECUTED, CANCELLED
+}
