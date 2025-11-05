@@ -1,6 +1,8 @@
-/ ============================================
-// 6. RewardCalculator.java
-// ============================================
+package com.lidcoin.staking;
+
+import java.util.*;
+import java.time.Instant;
+
 class RewardCalculator {
     
     public StakingReward calculateTotalRewards(List<Stake> stakes) {
