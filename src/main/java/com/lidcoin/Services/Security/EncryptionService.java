@@ -1,6 +1,11 @@
-// ============================================
-// 5. EncryptionService.java
-// ============================================
+package com.lidcoin.security;
+
+import javax.crypto.*;
+import javax.crypto.spec.*;
+import java.security.*;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
+
 class EncryptionService {
     private static final String ALGORITHM = "AES";
     private static final int KEY_SIZE = 256;
