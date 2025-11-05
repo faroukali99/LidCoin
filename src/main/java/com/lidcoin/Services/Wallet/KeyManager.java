@@ -1,3 +1,13 @@
+package com.lidcoin.wallet;
+
+import javax.crypto.*;
+import java.security.*;
+import java.security.spec.*;
+import java.util.*;
+import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
+
 class KeyManager {
     private Map<String, byte[]> encryptedKeys;
     private static final String ALGORITHM = "AES";
@@ -24,7 +34,7 @@ class KeyManager {
         try {
             byte[] decrypted = decryptKey(encrypted, password);
             return KeyFactory.getInstance("RSA").generatePrivate(
-                new java.security.spec.PKCS8EncodedKeySpec(decrypted)
+                new PKCS8EncodedKeySpec(decrypted)
             );
         } catch (Exception e) {
             throw new RuntimeException("Erreur lors de la récupération de la clé", e);
@@ -36,7 +46,7 @@ class KeyManager {
         byte[] key = sha.digest(password.getBytes(StandardCharsets.UTF_8));
         key = Arrays.copyOf(key, 16);
         
-        javax.crypto.spec.SecretKeySpec secretKey = new javax.crypto.spec.SecretKeySpec(key, ALGORITHM);
+        SecretKeySpec secretKey = new SecretKeySpec(key, ALGORITHM);
         Cipher cipher = Cipher.getInstance(ALGORITHM);
         cipher.init(Cipher.ENCRYPT_MODE, secretKey);
         return cipher.doFinal(data);
@@ -47,7 +57,7 @@ class KeyManager {
         byte[] key = sha.digest(password.getBytes(StandardCharsets.UTF_8));
         key = Arrays.copyOf(key, 16);
         
-        javax.crypto.spec.SecretKeySpec secretKey = new javax.crypto.spec.SecretKeySpec(key, ALGORITHM);
+        SecretKeySpec secretKey = new SecretKeySpec(key, ALGORITHM);
         Cipher cipher = Cipher.getInstance(ALGORITHM);
         cipher.init(Cipher.DECRYPT_MODE, secretKey);
         return cipher.doFinal(encrypted);
