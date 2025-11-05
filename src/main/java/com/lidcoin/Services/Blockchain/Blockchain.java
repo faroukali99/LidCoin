@@ -1,4 +1,11 @@
 // ============================================
+package com.lidcoin.blockchain;
+
+import java.util.*;
+import java.time.Instant;
+import java.util.concurrent.ConcurrentHashMap;
+
+// ============================================
 // 2. Blockchain.java
 // ============================================
 class Blockchain {
