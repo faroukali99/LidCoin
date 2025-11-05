@@ -1,3 +1,5 @@
+package com.lidcoin.blockchain;
+
 import java.security.*;
 import java.util.*;
 import java.time.Instant;
