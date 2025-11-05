@@ -1,3 +1,8 @@
+package com.lidcoin.wallet;
+
+import java.util.*;
+import java.util.Base64;
+
 class WalletDTO {
     private String address;
     private double balance;
