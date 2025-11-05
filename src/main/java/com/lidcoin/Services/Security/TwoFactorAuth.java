@@ -1,6 +1,12 @@
-// ============================================
-// 4. TwoFactorAuth.java
-// ============================================
+package com.lidcoin.security;
+
+import javax.crypto.*;
+import javax.crypto.spec.*;
+import java.security.*;
+import java.nio.ByteBuffer;
+import java.time.Instant;
+import java.util.Base64;
+
 class TwoFactorAuth {
     private static final int SECRET_LENGTH = 32;
     private SecureRandom random;
