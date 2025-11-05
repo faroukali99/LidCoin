@@ -1,3 +1,8 @@
+package com.lidcoin.wallet;
+
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+
 class WalletManager {
     private WalletService walletService;
     private Map<String, Set<String>> userWallets;
@@ -5,7 +10,7 @@ class WalletManager {
     
     public WalletManager(WalletService walletService) {
         this.walletService = walletService;
-        this.userWallets = new HashMap<>();
+        this.userWallets = new ConcurrentHashMap<>();
     }
     
     public Wallet createUserWallet(String userId, String password) {
