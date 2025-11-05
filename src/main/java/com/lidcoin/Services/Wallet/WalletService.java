@@ -1,11 +1,16 @@
+package com.lidcoin.wallet;
+
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+
 class WalletService {
     private Map<String, Wallet> wallets;
     private Map<String, String> addressToUser;
     private KeyManager keyManager;
     
     public WalletService() {
-        this.wallets = new HashMap<>();
-        this.addressToUser = new HashMap<>();
+        this.wallets = new ConcurrentHashMap<>();
+        this.addressToUser = new ConcurrentHashMap<>();
         this.keyManager = new KeyManager();
     }
     
@@ -71,7 +76,6 @@ class WalletService {
     public boolean exportWallet(String address, String filePath) {
         Wallet wallet = wallets.get(address);
         if (wallet != null) {
-            // Logique d'export du wallet
             System.out.println("Wallet exporté vers: " + filePath);
             return true;
         }
@@ -79,7 +83,6 @@ class WalletService {
     }
     
     public Wallet importWallet(String filePath, String password) {
-        // Logique d'import du wallet
         System.out.println("Wallet importé depuis: " + filePath);
         return null;
     }
