@@ -1,6 +1,8 @@
-// ============================================
-// 6. AuditLogger.java
-// ============================================
+package com.lidcoin.security;
+
+import java.util.*;
+import java.time.Instant;
+
 class AuditLogger {
     private List<AuditEntry> auditLog;
     
